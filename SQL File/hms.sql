@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2019 at 08:15 PM
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.2.19
+-- Generation Time: Oct 27, 2022 at 09:44 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -103,7 +102,8 @@ INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`
 (6, 'General Physician', 'Amrita', 'New Delhi India', '2500', 45497964, 'amrita@test.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 07:52:50', '0000-00-00 00:00:00'),
 (7, 'Demo test', 'abc ', 'New Delhi India', '200', 852888888, 'test@demo.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 08:08:58', '2019-06-23 18:17:25'),
 (8, 'Ayurveda', 'Test Doctor', 'Xyz Abc New Delhi', '600', 1234567890, 'test@test.com', '202cb962ac59075b964b07152d234b70', '2019-06-23 17:57:43', '2019-06-23 18:06:06'),
-(9, 'Dermatologist', 'Anuj kumar', 'New Delhi India 110001', '500', 1234567890, 'anujk@test.com', 'f925916e2754e5e03f75dd58a5733251', '2019-11-10 18:37:47', '2019-11-10 18:38:10');
+(9, 'Dermatologist', 'Anuj kumar', 'New Delhi India 110001', '500', 1234567890, 'anujk@test.com', 'f925916e2754e5e03f75dd58a5733251', '2019-11-10 18:37:47', '2019-11-10 18:38:10'),
+(10, 'Dentist', 'Augustine Waigwa', '1120', '1000', 703223573, 'augustine255@gmail.com', 'ff8b81bc32bdaccd6661c66cddf35188', '2022-10-26 06:11:41', NULL);
 
 -- --------------------------------------------------------
 
@@ -120,6 +120,20 @@ CREATE TABLE `doctorslog` (
   `logout` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctorslog`
+--
+
+INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
+(20, NULL, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 05:56:41', NULL, 0),
+(21, NULL, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 05:56:46', NULL, 0),
+(22, NULL, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 06:00:03', NULL, 0),
+(23, 10, 'augustine255@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 06:12:06', NULL, 1),
+(24, 10, 'augustine255@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 06:24:25', NULL, 1),
+(25, 10, 'augustine255@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 06:34:33', NULL, 1),
+(26, 10, 'augustine255@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 19:23:18', NULL, 1),
+(27, 10, 'augustine255@gmail.coM', 0x3a3a3100000000000000000000000000, '2022-10-27 07:12:07', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -176,7 +190,10 @@ CREATE TABLE `tblcontactus` (
 INSERT INTO `tblcontactus` (`id`, `fullname`, `email`, `contactno`, `message`, `PostingDate`, `AdminRemark`, `LastupdationDate`, `IsRead`) VALUES
 (1, 'test user', 'test@gmail.com', 2523523522523523, ' This is sample text for the test.', '2019-06-29 19:03:08', 'Test Admin Remark', '2019-06-30 12:55:23', 1),
 (2, 'Anuj kumar', 'phpgurukulofficial@gmail.com', 1111111111111111, ' This is sample text for testing.  This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing. This is sample text for testing.', '2019-06-30 13:06:50', NULL, NULL, NULL),
-(3, 'fdsfsdf', 'fsdfsd@ghashhgs.com', 3264826346, 'sample text   sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  ', '2019-11-10 18:53:48', 'vfdsfgfd', '2019-11-10 18:54:04', 1);
+(3, 'fdsfsdf', 'fsdfsd@ghashhgs.com', 3264826346, 'sample text   sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  sample text  ', '2019-11-10 18:53:48', 'vfdsfgfd', '2019-11-10 18:54:04', 1),
+(4, 'Augustine Waigwa', 'augustinewaigwa254@gmail.com', 703223573, ' ', '2022-10-24 18:05:27', NULL, NULL, NULL),
+(5, 'Esther', 'esther@gmail.com', 703223573, ' I`m here to inquire about the visuting hours', '2022-10-26 17:50:53', NULL, NULL, NULL),
+(6, 'Esther', 'esther@gmail.com', 703223573, ' I`m here to inquire about the visuting hours', '2022-10-26 17:51:05', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -236,7 +253,8 @@ INSERT INTO `tblpatient` (`ID`, `Docid`, `PatientName`, `PatientContno`, `Patien
 (2, 5, 'Raghu Yadav', 9797977979, 'raghu@gmail.com', 'Male', 'ABC Apartment Mayur Vihar Ph-1 New Delhi', 39, 'No', '2019-11-05 10:40:13', '2019-11-05 11:53:45'),
 (3, 7, 'Mansi', 9878978798, 'jk@gmail.com', 'Female', '\"fdghyj', 46, 'No', '2019-11-05 10:49:41', '2019-11-05 11:58:59'),
 (4, 7, 'Manav Sharma', 9888988989, 'sharma@gmail.com', 'Male', 'L-56,Ashok Nagar New Delhi-110096', 45, 'He is long suffered by asthma', '2019-11-06 14:33:54', '2019-11-06 14:34:31'),
-(5, 9, 'John', 1234567890, 'john@test.com', 'male', 'Test ', 25, 'THis is sample text for testing.', '2019-11-10 18:49:24', NULL);
+(5, 9, 'John', 1234567890, 'john@test.com', 'male', 'Test ', 25, 'THis is sample text for testing.', '2019-11-10 18:49:24', NULL),
+(6, 10, 'mary', 788978989, 'mary@gmail.com', '', '1120', 20, 'suffering from typhoid', '2022-10-26 06:27:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -253,6 +271,23 @@ CREATE TABLE `userlog` (
   `logout` varchar(255) DEFAULT NULL,
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userlog`
+--
+
+INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`, `status`) VALUES
+(24, NULL, 'augustinewaigwa254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 05:47:56', NULL, 0),
+(25, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 05:52:15', NULL, 1),
+(26, NULL, 'augustinewaigwa254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 05:58:21', NULL, 0),
+(27, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 05:58:54', NULL, 1),
+(28, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 06:02:06', NULL, 1),
+(29, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 06:35:22', '26-10-2022 12:13:12 PM', 1),
+(30, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 07:15:19', '26-10-2022 12:46:30 PM', 1),
+(31, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 07:47:38', NULL, 1),
+(32, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 18:31:19', NULL, 1),
+(33, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-26 19:44:05', NULL, 1),
+(34, 8, 'augustine254@gmail.com', 0x3a3a3100000000000000000000000000, '2022-10-27 05:56:49', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -282,7 +317,8 @@ INSERT INTO `users` (`id`, `fullName`, `address`, `city`, `gender`, `email`, `pa
 (4, 'Rahul Singh', 'New Delhi', 'New delhi', 'male', 'rahul@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 07:41:14', '0000-00-00 00:00:00'),
 (5, 'Amit kumar', 'New Delhi India', 'Delhi', 'male', 'amit12@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2017-01-07 08:00:26', '0000-00-00 00:00:00'),
 (6, 'Test user', 'New Delhi', 'Delhi', 'male', 'tetuser@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2019-06-23 18:24:53', '2019-06-23 18:36:09'),
-(7, 'John', 'USA', 'Newyork', 'male', 'john@test.com', 'f925916e2754e5e03f75dd58a5733251', '2019-11-10 18:40:21', '2019-11-10 18:40:51');
+(7, 'John', 'USA', 'Newyork', 'male', 'john@test.com', 'f925916e2754e5e03f75dd58a5733251', '2019-11-10 18:40:21', '2019-11-10 18:40:51'),
+(8, 'Augustine Waigwa', '1120', 'Nairobi', 'male', 'augustine254@gmail.com', 'ff8b81bc32bdaccd6661c66cddf35188', '2022-10-26 05:51:11', NULL);
 
 --
 -- Indexes for dumped tables
@@ -369,13 +405,13 @@ ALTER TABLE `appointment`
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `doctorslog`
 --
 ALTER TABLE `doctorslog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `doctorspecilization`
@@ -387,7 +423,7 @@ ALTER TABLE `doctorspecilization`
 -- AUTO_INCREMENT for table `tblcontactus`
 --
 ALTER TABLE `tblcontactus`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tblmedicalhistory`
@@ -399,19 +435,19 @@ ALTER TABLE `tblmedicalhistory`
 -- AUTO_INCREMENT for table `tblpatient`
 --
 ALTER TABLE `tblpatient`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
